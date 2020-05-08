@@ -1,0 +1,4 @@
+services:
+  elc_classroom_content.classroomservice:
+    class: Drupal\elc_classroom_content\Services\ClassroomService
+    arguments: ['@file_system', '@logger.stdout', '@database']

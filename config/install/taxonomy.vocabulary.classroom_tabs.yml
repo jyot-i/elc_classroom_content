@@ -1,0 +1,11 @@
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - elc_classroom_content
+name: Classroom Tabs
+vid: classroom_tabs
+description: 'Classroom Tabs'
+hierarchy: 0
+weight: 0

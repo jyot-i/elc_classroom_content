@@ -1,0 +1,15 @@
+{
+  "name": "elc/elc_classroom_content",
+  "description": "Classroom Package",
+  "version": "1.0.0",
+  "type": "elc-drupal",
+  "minimum-stability": "dev",
+  "license": "BSD-3-Clause",
+  "require":{
+  	"elc/drupal_module_installer": "*",
+    "php": ">=7.1",
+    "drupal/conditional_fields": "^1.0@alpha",
+    "drupal/plupload": "1.x-dev",
+    "drupal/plupload_widget": "^1.0"
+  }
+}

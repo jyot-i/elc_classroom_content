@@ -1,0 +1,43 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.module.field_content_duration
+    - field.field.node.module.field_document
+    - field.field.node.module.field_interactive_content_url
+    - field.field.node.module.field_module_category
+    - field.field.node.module.field_module_description
+    - field.field.node.module.field_module_file_type
+    - field.field.node.module.field_module_image
+    - field.field.node.module.field_module_status
+    - field.field.node.module.field_module_types
+    - field.field.node.module.field_my_role_files
+    - field.field.node.module.field_my_role_image
+    - node.type.module
+  module:
+    - user
+id: node.module.teaser
+targetEntityType: node
+bundle: module
+mode: teaser
+content:
+  links:
+    weight: 100
+    region: content
+hidden:
+  field_content_duration: true
+  field_document: true
+  field_interactive_content_url: true
+  field_module_category: true
+  field_module_description: true
+  field_module_file_type: true
+  field_module_image: true
+  field_module_status: true
+  field_module_types: true
+  field_my_role_content_desc: true
+  field_my_role_files: true
+  field_my_role_image: true
+  field_roles: true
+  langcode: true
+  search_api_excerpt: true

@@ -1,0 +1,12 @@
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - elc_classroom_content
+name: 'Module Category'
+vid: module_category
+description: ''
+hierarchy: 0
+weight: 0
+

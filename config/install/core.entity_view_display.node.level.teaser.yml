@@ -1,0 +1,26 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.level.field_level_description
+    - field.field.node.level.field_level_image
+    - field.field.node.level.field_level_module
+    - field.field.node.level.field_classroom_tab
+    - node.type.level
+  module:
+    - user
+id: node.level.teaser
+targetEntityType: node
+bundle: level
+mode: teaser
+content:
+  links:
+    weight: 100
+    region: content
+hidden:
+  field_level_description: true
+  field_level_image: true
+  field_level_module: true
+  langcode: true
+  search_api_excerpt: true
