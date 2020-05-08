@@ -1,0 +1,26 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_my_role_files
+    - node.type.module
+  module:
+    - file
+id: node.module.field_my_role_files
+field_name: field_my_role_files
+entity_type: node
+bundle: module
+label: Files
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  file_directory: '[date:custom:Y]-[date:custom:m]'
+  file_extensions: 'pdf jpg jpeg png wmv mp4 avi flv mkv mpeg mpg 3gp zip mov'
+  max_filesize: '350 MB'
+  description_field: true
+  handler: 'default:file'
+  handler_settings: {  }
+field_type: file

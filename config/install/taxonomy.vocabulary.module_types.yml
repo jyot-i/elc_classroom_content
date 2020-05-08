@@ -1,0 +1,11 @@
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - elc_classroom_content
+name: 'Module Types'
+vid: module_types
+description: ''
+hierarchy: 0
+weight: 0

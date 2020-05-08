@@ -1,0 +1,15 @@
+elc_classroom_content.level:
+  path: 'api/v1/classroom/levelsListing/{tab_id}'
+  defaults:
+    _controller: '\Drupal\elc_classroom_content\Controller\ClassRoomController::getLevelListing'
+  methods: [GET]
+  requirements:
+    _permission: 'access content'
+
+elc_classroom_content.module:
+  path: 'api/v1/classroom/modulesListing/{level_id}'
+  defaults:
+    _controller: '\Drupal\elc_classroom_content\Controller\ClassRoomController::getModuleListing'
+  methods: [GET]
+  requirements:
+    _permission: 'access content'

@@ -1,0 +1,51 @@
+<?php
+
+use Drupal\Core\Form\FormStateInterface;
+
+/**
+ * Implements hook_form_alter().
+ *
+ * Alter the form to generate the url of the articulate content.
+ */
+function elc_classroom_content_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+
+  $classroom_module_form = [
+    'node_module_form',
+    'node_module_edit_form',
+  ];
+
+  if (in_array($form_id, $classroom_module_form)) {
+     // Custom  submit handler for the classroom modules.
+    $form['actions']['submit']['#submit'][] = 'elc_classroom_content_form_submit';
+  }
+}
+
+/**
+ * Custom submit for classrooms content.
+ */
+function elc_classroom_content_form_submit(&$form, FormStateInterface $form_state) {
+  $user_info = $form_state->getValues();
+  $file_id = $user_info['field_document'][0]['fids'][0];
+  $file_type = \Drupal::service('elc_classroom_content.classroomservice')->getFileType($file_id);
+
+  // Load the entity object of the node.
+  $entity = $form_state->getFormObject()->getEntity();
+
+  // Check the filemime of the uploaded file to generate url for articulate.
+  if (!empty($file_id) && !empty($file_type)) {
+
+    // Set interactive content url value.
+    if ($file_type === 'application/zip') {
+      $interactive_file_url = \Drupal::service('elc_classroom_content.classroomservice')->getInteractiveContentUrl($file_id);
+      $entity->set('field_interactive_content_url', $interactive_file_url);
+    }
+    // Set the filemime in the hidden field of the module.
+    $entity->set('field_module_file_type', $file_type);
+    // Save the entity.
+    $entity->save();
+  }
+  if ($user_info['field_content_document'][0]['value'] == 'url' || $user_info['field_select_document'][0]['value'] == 'link_url') {
+    $entity->set('field_module_file_type', 'Link');
+    $entity->save();
+  }
+}

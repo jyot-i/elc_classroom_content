@@ -1,0 +1,28 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_module_types
+    - node.type.module
+    - taxonomy.vocabulary.module_types
+id: node.module.field_module_types
+field_name: field_module_types
+entity_type: node
+bundle: module
+label: 'Module Tags'
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      module_types: module_types
+    sort:
+      field: name
+      direction: asc
+    auto_create: true
+    auto_create_bundle: ''
+field_type: entity_reference

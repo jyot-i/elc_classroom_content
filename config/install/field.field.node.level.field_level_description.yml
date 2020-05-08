@@ -1,0 +1,18 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_level_description
+    - node.type.level
+id: node.level.field_level_description
+field_name: field_level_description
+entity_type: node
+bundle: level
+label: 'Level Description'
+description: 'Level description'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

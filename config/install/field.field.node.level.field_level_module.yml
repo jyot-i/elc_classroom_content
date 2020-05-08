@@ -1,0 +1,27 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_level_module
+    - node.type.module
+    - node.type.level
+id: node.level.field_level_module
+field_name: field_level_module
+entity_type: node
+bundle: level
+label: 'Level Module'
+description: 'Level module'
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      module: module
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference
